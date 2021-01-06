@@ -22,9 +22,16 @@ const Home = () => {
       <FastFeedbackLogo boxSize={12} name="logo" />
 
       {auth.user ? (
-        <Button onClick={(e) => auth.signout()}>Sign Out</Button>
+        <Button as="a" size="sm" fontWeight="medium" href="/dashboard">
+          View Dashboard
+        </Button>
       ) : (
-        <Button mt={4} size="sm" onClick={(e) => auth.signinWithGitHub()}>
+        <Button
+          mt={4}
+          size="sm"
+          fontWeight="medium"
+          onClick={(e) => auth.signinWithGitHub()}
+        >
           Sign In
         </Button>
       )}
